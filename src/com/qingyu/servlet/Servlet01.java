@@ -14,6 +14,10 @@ import java.io.IOException;
  *  4:设置注解，指定访问路径
  */
 @WebServlet("/ser01")
+//@WebServlet(name="Servlet01",value="/ser01")
+//@WebServlet(name="Servlet01",value={"/ser01","/ser001"})
+//@WebServlet(name="Servlet01",urlPatterns={"/ser01")
+//@WebServlet(name="Servlet01",urlPatterns={"/ser01","/ser001"})
 public class Servlet01 extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
