@@ -13,6 +13,8 @@ import java.io.IOException;
 public class Servlet06 extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //设置请求的编码格式，默认为ISO-8859-1 不支持中文
+        req.setCharacterEncoding("UTF-8");
         //获取完整路径
         System.out.println(req.getRequestURL().toString());
         System.out.println(req.getRequestURI());
@@ -25,11 +27,11 @@ public class Servlet06 extends HttpServlet {
          * 获取请求的参数
          */
         //获取制定名称的参数值
-        String name = req.getParameter("name");
-        String pwd = req.getParameter("pwd");
-        System.out.println("name： " + name);
-        System.out.println("pwd： " + pwd);
-        //http://localhost:8080/s01/ser06?name=admin&pwd=123&hobby=sing&hobby=dance
+        String uname = req.getParameter("uname");
+        String upwd = req.getParameter("upwd");
+        System.out.println("uname： " + uname);
+        System.out.println("upwd： " + upwd);
+        //http://localhost:8080/s01/ser06?uname=admin&upwd=123&hobby=sing&hobby=dance
         //获取制定名称的参数的所有参数值（用于复选框）
         String[] hobbys = req.getParameterValues("hobby");
         if (hobbys != null && hobbys.length > 0) {
