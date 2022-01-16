@@ -12,13 +12,14 @@ import java.util.List;
 @WebServlet("/ser09")
 public class Serlvet09 extends HttpServlet {
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("uname","admin");
-        req.setAttribute("age",17);
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("uname","admin");
+        request.setAttribute("age",17);
         List<String> list =new ArrayList<>();
         list.add("cpu");
         list.add("ram");
-        req.setAttribute("list",list);
-        req.getRequestDispatcher("ser10").forward(req,resp);
+        request.setAttribute("list",list);
+        //req.getRequestDispatcher("ser10").forward(req,resp);
+        request.getRequestDispatcher("servlet09.jsp").forward(request,response);
     }
 }
