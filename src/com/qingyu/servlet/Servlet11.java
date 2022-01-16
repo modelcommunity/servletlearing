@@ -16,8 +16,12 @@ import java.io.PrintWriter;
 public class   Servlet11 extends HttpServlet {
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //设置服务端的编码
+        response.setCharacterEncoding("UTF-8");
+        //设置客户端的编码
+        response.setHeader("content-type","text/html;charset=UTF-8");
         PrintWriter writer =response.getWriter();
-        writer.write("Hello");
+        writer.write("<h1>你好</h1>");
         //http://localhost:8080/s01/ser11
 
      }
